@@ -7,12 +7,20 @@ namespace AlgorithmsTestProject
     {
         public static void MySort1(int[] array)
         {
-            throw new NotImplementedException();
+            for (var i = 0; i < array.Length; i++)
+            {
+                for (var j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[i])
+                    {
+                        ArrayProblems.Swap(array, i, j);
+                    }
+                }
+            }
         }
 
         public static void MySort2(int[] array)
         {
-            throw new NotImplementedException();
         }
 
         public static void MergeSort(int[] array)
@@ -34,9 +42,6 @@ namespace AlgorithmsTestProject
 
             for (int i = array.Length; i > 0; i--)
             {
-                // La boucle interne itérera d'abord sur la longueur complète
-                // La prochaine itération se fera sur n-1
-                // La suivante se fera sur n-2, et ainsi de suite
                 for (int j = 1; j < i; j++)
                 {
                     if (array[j - 1] > array[j])
