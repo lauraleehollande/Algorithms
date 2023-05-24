@@ -159,5 +159,3 @@ public static class ArrayProblems
         return false; // doesn't habve a duplicate
     }
 }
-
-}
