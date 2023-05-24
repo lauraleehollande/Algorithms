@@ -24,7 +24,27 @@
 
         public static void BubbleSort(int[] array)
         {
-            throw new NotImplementedException();
+            if (array.Length < 1)
+            {
+                throw new Exception("Array is empty.");
+            }
+
+            for (int i = array.Length; i > 0; i--)
+            {
+                // La boucle interne itérera d'abord sur la longueur complète
+                // La prochaine itération se fera sur n-1
+                // La suivante se fera sur n-2, et ainsi de suite
+                for (int j = 1; j < i; j++)
+                {
+                    if (array[j - 1] > array[j])
+                    {
+                        int intermediate = array[j];
+                        array[j] = array[j - 1];
+                        array[j - 1] = intermediate;
+
+                    }
+                }
+            }
         }
 
         public static void ShuffleSort(int[] array)
