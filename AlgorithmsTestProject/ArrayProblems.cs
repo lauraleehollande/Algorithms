@@ -145,6 +145,19 @@ public static class ArrayProblems
 
     public static bool HasDuplicates<T>(T[] xs)
     {
-        return xs.Length != xs.Distinct().Count();
+        for (int i = 0; i < xs.Length; i++)
+        {
+            for (int j = i + 1; j < xs.Length; j++)
+            {
+                if (EqualityComparer<T>.Default.Equals(xs[i], xs[j]))
+                {
+                    return true; // has a duplicate
+                }
+            }
+        }
+
+        return false; // doesn't habve a duplicate
     }
+}
+
 }
