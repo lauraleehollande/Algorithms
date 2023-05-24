@@ -1,4 +1,7 @@
-﻿namespace AlgorithmsTestProject
+﻿using System;
+using NUnit.Framework;
+
+namespace AlgorithmsTestProject
 {
     public static class ArraySortTests
     {
@@ -48,6 +51,11 @@
         [Test, TestCaseSource(nameof(TestCaseData))]
         public static void SortTest(string sortName, int[] input)
         {
+            if (input.Length < 1)
+            {
+                // if empty array.
+                Assert.Pass();
+            }
             var algo = GetSortingAlgorithm(sortName);
             algo(input);
             Assert.IsTrue(IsSorted(input));

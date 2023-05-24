@@ -1,4 +1,7 @@
-﻿namespace AlgorithmsTestProject
+﻿using System;
+using NUnit.Framework;
+
+namespace AlgorithmsTestProject
 {
     public static class ArraySortProblems
     {
@@ -41,7 +44,6 @@
                         int intermediate = array[j];
                         array[j] = array[j - 1];
                         array[j - 1] = intermediate;
-
                     }
                 }
             }
