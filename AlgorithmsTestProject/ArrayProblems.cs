@@ -42,9 +42,8 @@ public static class ArrayProblems
     {
         if (xs.Length < 1)
         {
-            throw new Exception("Array is empty.");
+            throw new IndexOutOfRangeException();
         }
-
         return xs[xs.Length - 1];
     }
 
@@ -159,6 +158,6 @@ public static class ArrayProblems
         }
 
         return false; // doesn't habve a duplicate
-    //     return xs.Distinct().Count() != xs.Length;
     }
+    //     return xs.Distinct().Count() != xs.Length;
 }
