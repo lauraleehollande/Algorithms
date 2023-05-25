@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace AlgorithmsTestProject;
 
 public static class ArrayProblems
@@ -157,5 +159,6 @@ public static class ArrayProblems
         }
 
         return false; // doesn't habve a duplicate
+    //     return xs.Distinct().Count() != xs.Length;
     }
 }

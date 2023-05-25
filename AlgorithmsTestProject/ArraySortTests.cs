@@ -20,6 +20,8 @@ namespace AlgorithmsTestProject
             nameof(ArraySortProblems.BogoSort),
             nameof(ArraySortProblems.DoNothingSort),
             nameof(ArraySortProblems.EvilSort),
+            nameof(ArraySortProblems.GnomeSort),
+            nameof(ArraySortProblems.SelectionSort)
         };
             
         public static Action<int[]> GetSortingAlgorithm(string name)

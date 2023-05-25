@@ -21,6 +21,15 @@ namespace AlgorithmsTestProject
 
         public static void MySort2(int[] array)
         {
+            var current = array.ToList();
+            var result = new List<int>();
+            while (current.Count > 0)
+            {
+                var x = current.Min();
+                result.Add(x);
+                current.Remove(x);
+            }
+            result.CopyTo(array);
         }
 
         public static void MergeSort(int[] array)
@@ -91,6 +100,15 @@ namespace AlgorithmsTestProject
         public static void EvilSort(int[] array)
         {
             Array.Fill(array, 0);
+        }
+
+        public static void GnomeSort(int[] array)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void SelectionSort(int[] array)
+        {
         }
     }
 }
