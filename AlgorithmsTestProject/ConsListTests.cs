@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AlgorithmsTestProject
+﻿namespace AlgorithmsTestProject
 {
     public static class ConsListTests
     {
@@ -12,8 +6,30 @@ namespace AlgorithmsTestProject
         {
             foreach (var x in xs.ToEnumerable())
             {
-                Console.WriteLine(x);
+                Console.Write(x);
+                Console.Write(";");
             }
+            Console.WriteLine();
+        }
+
+        public static IConsList<T> MyConcat<T>(IConsList<T> xs, IConsList<T> ys)
+        {
+            var r = ys;
+            foreach (var x in xs.Reverse().ToEnumerable())
+                r = r.Prepend(x);
+            return r;
+        }
+
+        [Test]
+        public static void MyTestConcat()
+        {
+            var xs = new[] { 1, 2, 3 };
+            Output(xs.ToConsList());
+            var ys = new[] { 4, 5 };
+            Output(ys.ToConsList());
+            var zs = MyConcat(xs.ToConsList(), ys.ToConsList());
+            Output(zs);
+            Assert.AreEqual(new[] { 1, 2,3, 4, 5},zs.ToEnumerable());
         }
 
         [Test]
@@ -22,8 +38,8 @@ namespace AlgorithmsTestProject
             var xs = new[] { 1, 2, 3, 4, 5 };
             var r = xs.ToConsList();
             Output(r);
-            Assert.AreEqual(xs.Reverse(), r.ToEnumerable());
-            Assert.AreEqual(xs, r.Reverse().ToEnumerable());
+            Assert.AreEqual(xs, r.ToEnumerable());
+            Assert.AreEqual(xs, r.ToEnumerable());
         }
 
         [Test]
