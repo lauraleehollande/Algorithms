@@ -34,12 +34,30 @@ namespace AlgorithmsTestProject
 
         public static void MergeSort(int[] array)
         {
-            throw new NotImplementedException();
+            for (var i = 0; i < array.Length; i++)
+            {
+                for (var j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[i])
+                    {
+                        ArrayProblems.Swap(array, i, j);
+                    }
+                }
+            }
         }
 
         public static void HeapSort(int[] array)
         {
-            throw new NotImplementedException();
+            for (var i = 0; i < array.Length; i++)
+            {
+                for (var j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[i])
+                    {
+                        ArrayProblems.Swap(array, i, j);
+                    }
+                }
+            }
         }
 
         public static void BubbleSort(int[] array)
